@@ -1,0 +1,3 @@
+/* Implementation with @LIB_NAME@.h */
+#define @IMPL_MACRO@
+#include "@LIB_NAME@.h"
