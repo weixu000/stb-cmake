@@ -1,7 +1,11 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.11)
 project(stb-cmake C)
 
-set(STB_REPO "stb")
+include(FetchContent)
+FetchContent_Declare(stb-git GIT_REPOSITORY https://github.com/nothings/stb.git)
+FetchContent_Populate(stb-git)
+
+set(STB_REPO "${stb-git_SOURCE_DIR}")
 set(STB_IMPL_TEMPLATE "stb_impl.c.in")
 
 function(add_stb_library LIB_NAME)
