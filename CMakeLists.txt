@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.11)
 project(stb-cmake C)
 
-set(STB_LIB_NAMES "stb_image;stb_image_write" CACHE STRING "stb libraries included")
+if(NOT STB_LIB_NAMES)
+    set(STB_LIB_NAMES "stb_image;stb_image_write")
+endif()
 
 include(FetchContent)
 FetchContent_Declare(stb-git GIT_REPOSITORY https://github.com/nothings/stb.git)
