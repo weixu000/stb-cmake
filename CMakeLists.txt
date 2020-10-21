@@ -20,7 +20,7 @@ function(add_stb_library LIB_NAME)
 endfunction()
 
 foreach(LIB_NAME ${STB_LIB_NAMES})
-    option(ENABLE_${LIB_NAME} "Enable ${LIB_NAME}" true)
+    option(ENABLE_${LIB_NAME} "Enable ${LIB_NAME}" OFF)
     if (${ENABLE_${LIB_NAME}})
         add_stb_library(${LIB_NAME})
     endif ()
